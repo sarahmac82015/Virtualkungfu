@@ -1,0 +1,234 @@
+
+body{
+    margin:0px;
+    padding:0px;
+}
+#wrapper{
+    height:1500px;
+    width: 1500px;
+    background-color:black;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+#Header{
+    width:1220px;
+    background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+    padding-top: 15px;
+    padding-left: 0px;
+    border-radius:5px;
+}
+#topheader{
+    width:1200x;
+    height:300px;
+    margin-top:20px;
+    margin-left:5px;
+    margin-bottom:5px;
+}
+#topHeaderleft{
+    display:inline-block;
+    width:380px;
+    margin-right:5px;
+    vertical-align:top;
+}
+#topHeadercenter{
+    display:inline-block;
+    width:400px;
+    margin-right:10px;
+    vertical-align:top;
+}
+#topHeaderright{
+    display:inline-block;
+    width:380px;
+    vertical-align:top;
+}
+#topHeaderleft img{
+    width:50%;
+    height:50%;
+    border:4px solid black;
+}
+#topHeadercenter img{
+    width:100%;
+    height:60%;
+    border:4px solid black;
+}
+#topHeaderright img{
+    width:80%;
+    height:50%;
+    border:4px solid black;
+}
+#bottomHeader{
+    width:1200px;
+    
+}
+#navbar{
+    background-color:black;
+    display: inline-block;
+    vertical-align:bottom;
+    width:1000px;
+    padding:3px;
+    border-radius:8px;
+}
+#navbar p{
+    color:yellow;
+    display:inline-block;
+    margin: 15px;
+    font-weight: bold;
+}
+#navbar a{
+    color:yellow;
+}
+#imageholder{
+    display:inline-block;
+    vertical-align:top;
+}
+#imageholder img{
+    width:80%;
+    height:80%;
+    margin-left:20px;
+}
+#Pagebody{
+    margin-top:20px;
+    background-image: linear-gradient(to left, #f83600 0%, #f9d423 100%);
+    width: 1200px;
+    height:500px;
+    border-radius:5px;
+}
+#line{
+    display:flex;
+    justify-content:center;
+    margin-bottom:0px;
+    width:990px;
+    height:60px;
+    vertical-align:top;
+}
+#line h1{
+    margin:0px;
+}
+#topbody{
+    height:200px;
+    width:1200px;
+}
+#topleft{
+    background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
+    background-blend-mode: screen;
+    display:inline-block;
+    vertical-align:top;
+    width:310px;
+    height:190px;
+    margin-left:12px;
+    margin-right:12px;
+    border:2px solid black;
+    border-radius:5px;
+}
+#topleft img{
+    width:100%;
+    height:100%;
+}
+#topcenter{
+    background-color:rgb(15, 90, 228);
+    display:inline-block;
+    vertical-align:top;
+    width:310px;
+    height:190px;
+    margin-right:12px;
+    border:2px solid black;
+    border-radius:5px;
+}
+#topcenter img{
+    width:65%;
+    height:65%;
+}
+#topright{
+    background-color:rgba(8, 184, 8, 0.938);
+    display:inline-block;
+    vertical-align:top;
+    width:300px;
+    height:190px;
+    margin-right:12px;
+    border:2px solid black;
+    border-radius:5px;
+}
+#topright img{
+    width:65%;
+    height:65%;
+}
+#middlebody{
+    height:220px;
+    width:1200px;
+    margin-top:15px;
+}
+#middleleft{
+    display:inline-block;
+    vertical-align:top;
+    width:310px;
+    height:210px;
+    margin-left:12px;
+    margin-right:12px;
+    border:2px solid black;
+    border-radius:5px;
+}
+#middleleft img{
+    height:65%;
+    width:65%;
+}
+#middlecenter{
+    display:inline-block;
+    vertical-align:top;
+    width:310px;
+    height:210px;
+    margin-right:12px;
+    border:2px solid black;
+    border-radius:5px;
+}
+#middlecenter img{
+    width:100%;
+    height:100%;
+}
+#middleright{
+    display:inline-block;
+    vertical-align:top;
+    width:300px;
+    height:210px;
+    margin-right:12px;
+    border:2px solid black;
+    border-radius:5px;
+}
+#middleright img{
+    width:65%;
+    height:65%;
+}
+#Footer{
+    margin-top:12px;
+    background-color: rgb(72, 75, 75);
+    padding: 2em;
+    width: 1410px;
+    height:620px;
+    border-radius:5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#Footer > section {
+    width: 50%;
+    margin: 0 2em;
+    box-sizing: border-box;
+}
+
+#Footer * {
+    font-family: 'Anonymous Pro', monospace;
+    color: whitesmoke;
+}
+#Footer .error {
+    color: red;
+}
+#Footer h1, .post > h4 {
+    color: orange;
+}
+#Footer input, button, option, select {
+    color: black; 
+}
+#Footer .post {
+    border: dashed 1px;
+    width: 22%;
+    margin: 2em;
+    padding: 2em;
+}

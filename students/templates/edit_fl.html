@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Trip</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1>Hello Admin, {{ user.first_name }}! Edit a Form Someone is Learning! </h1>
+        <a href="/logout">Logout</a>
+        {% if messages %}
+        <ul class="messages">    
+            {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="/students/createfl" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="formName">Form Name</label>
+                <input type="text" name="formName" id="formName" class="form-control" value="{{ formLearning.formName }}">
+            </div>
+            <div class="form-group">
+                <label for="formVideo">Form Video</label>
+                <input type="text" name="formVideo" id="formVideo" class="form-control"  value="{{ formLearning.formVideo }}">
+            </div>
+            <div class="form-group">
+                <label for="formNotes">Form Notes</label>
+                <input type="text" name="formNotes" id="formNotes" class="form-control"   value="{{ formLearning.formNotes }}">
+            </div>
+            <div class="form-group">
+                <label for="studentVideoDoc">Student Video Documentation</label>
+                <input type="text" name="studentVideoDoc" id="studentVideoDoc" class="form-control"  value="{{ formLearning.studentVideoDoc }}">
+            </div>
+            <div class="form-group">
+                <label for="instComments">Instructor Comments</label>
+                <input type="text" name="instComments" id="instComments" class="form-control"  value="{{ formLearning.instComments }}">
+            </div>
+            <div class="form-group">
+                <label for="studentComments">Student Comments</label>
+                <input type="text" name="studentComments" id="studentComments" class="form-control" value="{{ formLearning.studentComments }}">
+            </div>
+            <button class="btn btn-primary">Submit</button>
+        </form> 
+</body>
+</html>

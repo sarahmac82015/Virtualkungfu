@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Kung Fu</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">        
+</head>
+<body>
+    <div id="wrapper">  
+        <div id="container_left">
+            <div id="Header">
+                <div id= "topHeader">
+                    <div id="topHeaderleft">
+                        <img src="{% static 'images1/Richard.jpg' %}" />
+                    </div>
+                    <div id="topHeadercenter">
+                        <img src="{% static 'images1/2016_ChinWoo_Grapevine.JPG' %}"/>
+                    </div>
+                    <div id="topHeaderright">
+                        <img src="{% static 'images1/Kids_pole.jpg' %}"/>
+                    </div>
+                </div>
+                <div id="bottomHeader">
+                    <div id="navbar">
+                        <p><a href="#">Request Performance</a></p>
+                        <p><a href="#">Request Private Lesson</a></p>
+                        <p><a href="#">Class Schedule</a></p>
+                        <p><a href="#">Wu Hao Taichi</a></p>
+                        <p><a href="#">Pay Dues</a></p>
+                        <p><a href="#">Form Library</a></p>
+                    </div>
+                    <div id= "imageholder">
+                        <img src= "{% static 'images1/USA_chinwoo.JPG' %}"/>
+                    </div>
+                </div>
+            </div>
+            <div id="Pagebody">
+                <div id= "line"><img src="{% static 'images1/ribbon_left.png' %}"/><h1>JK Wong Kung Fu Taichi</h1><img src="{% static 'images1/ribbon_right.png' %}"/></div>
+                <div id="topbody">
+                    <div id="topleft">
+                        <img src="{% static  'images1/newyear.JPG' %}"/>
+                    </div>
+                    <div id="topcenter">
+                        <img src="{% static  'images1/liam4.jpg' %}"/>
+                    </div>
+                    <div id="topright">
+                        <img src="{% static  'images1/paolo.jpg' %}"/>
+                    </div>
+                </div>
+                <div id="middlebody">
+                    <div id="middleleft"> 
+                        <img src="{% static 'images1/liam2.jpg' %}"/>
+                    </div>
+                    <div id="middlecenter">
+                        <img src="{% static 'images1/now.JPG' %}"/>
+                    </div>
+                    <div id="middleright">
+                        <img src="{% static 'images1/birthday.jpg' %}"/>
+                    </div>
+                </div>
+            </div>
+            <div id="Footer">
+                <section>
+                    <h2>Login</h2>
+                    {% if messages %}
+                        <ul class="messages">    
+                            {% for message in messages %}    
+                            {% if 'login' in message.extra_tags %}
+                            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endif %}    
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                        <form action="/login" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" class="form-control">
+                        </div>
+                        <button class="btn btn-primary">Submit</button>
+                    </form>
+                </section>
+                <section>
+                    <h2>Register</h2>
+                        {% if messages %}
+                            <ul class="messages">    
+                                {% for message in messages %}    
+                                {% if 'register' in message.extra_tags %}
+                                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                {% endif %}    
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                    <form action="/create" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="first_name">First Name</label>
+                            <input type="text" name="first_name" id="first_name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" name="last_name" id="last_name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm">Confirm Password</label>
+                            <input type="password" name="confirm" id="confirm" class="form-control">
+                        </div>
+                        <button class="btn btn-primary">Submit</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

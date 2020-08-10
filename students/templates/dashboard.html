@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Hello, {{ user.first_name }}!</h1>
+    <a href="/logout">Logout</a><a href="/virtualkungfuhome.html">Home</a> //check link structure
+    <img src= "{% static 'images1/USA_chinwoo.JPG' %}"/>
+    <h2>My Tested Forms:</h2>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Form Name</th>
+                <th>Video Documentation</th>
+                <th>Test Date</th>
+                <th>Instructor Comments</th>
+                <th>Continued Form Goals</th>
+                <th>Student Comments/Questions</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tested_form in tested_forms_mine %}
+            <tr>
+                <td><a href="/students/{{tested_form.id}}/details" >{{ tested_form.form_name }} </a></td>
+                <td>{{ tested_form.video_doc }}</td>
+                <td>{{ tested_form.test_date }}</td>
+                <td>{{ tested_form.inst_comments }}</td>
+                <td>{{ tested_form.contd_form_goals }}</td>
+                <td>{{ tested_form.student_comments }}</td>
+                <td>
+                    <a href="/students/{{tested_form.id}}/delete" class="btn btn-outline-danger">Delete </a> | <a href="/students/{{tested_form.id}}/edit" class="btn btn-outline-danger">Edit </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h2>Forms I'm Learning:</h2>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Form Name</th>
+                <th>Form Videos</th>
+                <th>Form Notes</th>
+                <th>Student Video Docs</th>
+                <th>Instructor Comments</th>
+                <th>Student Comments/Questions</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formsL in formsL_mine %}
+            <tr>
+                <td><a href="/students{{formLearning.id}}/details" >{{ formLearning.formName }} </a></td>
+                <td>{{ formLearning.formName }}</td>
+                <td>{{ formLearning.formVideo }}</td>
+                <td>{{ formLearning.formNotes }}</td>
+                <td>{{ formLearning.studentVideoDoc }}</td>
+                <td>{{ formLearning.instComments }}</td>
+                <td>{{ formLearning.studentComments }}</td>
+                <td>
+                {% if forml.formLearning.id != user.id %}
+                    <a href="/trips/cancel"><button class="btn btn-primary"> Cancel </button></a>
+                {% else %}
+                    <a href="#"class="btn btn-outline-danger">Join </a> 
+                {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

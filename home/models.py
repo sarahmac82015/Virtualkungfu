@@ -50,20 +50,14 @@ class UserManager(models.Manager):
             errors['email'] = 'Email already in use.'
 
         return errors
-# Create your models here.
+
 class User(models.Model):
-    # here's where the fields go!
-    # first_name VARCHAR(255)
-    # id
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
-    # weddings_attending -> {[Wedding]}
-    # planned_weddings -> [Wedding]
 
     objects = UserManager()
 

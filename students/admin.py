@@ -8,10 +8,10 @@ class TestedFormAdmin(admin.ModelAdmin):
 
 admin.site.register(TestedForm, TestedFormAdmin)
 
-#class FormL(admin.ModelAdmin):
-#    pass
+class FormLAdmin(admin.ModelAdmin):
+    pass
 
-#admin.site.register(FormL, FormLAdmin)
+admin.site.register(FormL, FormLAdmin)
 
 class UserAdmin(admin.ModelAdmin):
     pass

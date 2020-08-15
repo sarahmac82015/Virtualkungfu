@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Individual Trip Details</title>
+    <title>Details for Forms You Are Learning</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" href="{%static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Hello, {{ user.first_name }}!  Tested Forms</h1>
+    <h1>Hello, {{ this_user.first_name }}!  Forms you are learning:</h1>
     <a href="/logout">Logout</a>   |  <a href="/students/dashboard">Dashboard</a> |  <a href="virtualkungfuhome.html">Home</a>
-    <h2>Form Name{{ tested_form.form_name }}</h2>
-    <h3>Video Documentation: {{ tested_form.video_doc }}</h3>
-    <h3>Test Date: {{ tested_form.test_date }}</h3>
-    <h3>Instructor Comments: {{ tested_form.inst_comments }}</h3>
-    <h3>Continued Form Goals: {{ tested_form.contd_form_goals }}</h3>
-    <h3>Student Comments and Questions: {{ tested_form.student_comments }}</h3>
+    <img src= "{% static 'images1/USA_chinwoo.JPG' %}"/>
+    <h2>Form Name:{{ formLearning.formName }}</h2>
+    <h3>Form Videos: {{ formLearning.formVideo }}</h3>
+    <h3>Form Notes: {{ formLearning.formNotes }}</h3>
+    <h3>Student Video Docs: {{ formLearning.studentVideoDoc }}</h3>
+    <h3>Instructor Comments: {{ formLearning.instComments }}</h3>
+    <h3>Student Comments/Questions: {{ formLearning.studentComments }}</h3>
 </body>
 </html>
-
-            
+                

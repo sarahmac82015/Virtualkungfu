@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Trip</title>
+    <title>Edit Tested Form</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
     <section>
-        <h1>Hello Admin, {{ user.first_name }}! Edit Someone's Tested Form! </h1>
-        <a href="/logout">Logout</a>
+        <h1>Hello, {{ this_user.first_name }}! Edit Your Tested Form! </h1>
+        <a href="/logout">Logout</a>   <img src= "{% static 'images1/USA_chinwoo.JPG' %}"/>
         {% if messages %}
         <ul class="messages">    
             {% for message in messages %}    
@@ -19,7 +19,7 @@
             {% endfor %}
         </ul>
         {% endif %} 
-        <form action="/students/createtf" method="post">
+        <form action="/students/{{tested_form.id}}/updatetf" method="post">
             {% csrf_token %}
             <div class="form-group">
                 <label for="form_name">Form Name</label>
@@ -31,7 +31,11 @@
             </div>
             <div class="form-group">
                 <label for="test_date">Test Date</label>
-                <input type="date" name="test_date" id="test_date" class="form-control"   value="{{ tested_form.test_date | date: 'Y-m-d'}}"> 
+                <input type="date" name="test_date" id="test_date" class="form-control"   value="{{ tested_form.test_date }}"> 
+            </div>
+            <div class="form-group">
+                <label for="inst_comments">Instructor Comments</label>
+                <input type="text" name="inst_comments" id="inst_comments" class="form-control"  value="{{ tested_form.inst_comments }}"> 
             </div>
             <div class="form-group">
                 <label for="contd_form_goals">Continued Form Goals</label>
